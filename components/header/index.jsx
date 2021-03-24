@@ -27,8 +27,10 @@ import Link from "next/link";
 import { useSession, LoginButton, LogoutButton } from "@inrupt/solid-ui-react";
 import { LinkButton } from "@inrupt/prism-react-components";
 import styles from "./styles";
+import config from "../../config";
 
 const useStyles = makeStyles((theme) => createStyles(styles(theme)));
+const CONFIG = config();
 
 export const TESTCAFE_ID_HEADER_LOGO = "header-banner-logo";
 
@@ -71,6 +73,7 @@ export default function Header() {
 
         {!session.sessionRequestInProgress && !session.info.isLoggedIn && (
           <LoginButton
+            authOptions={{clientName: CONFIG.demoTitle}}
             oidcIssuer="https://broker.pod.inrupt.com"
             onError={console.error}
           >
