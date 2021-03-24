@@ -4,17 +4,25 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+First install, then run the development server:
 
 ```bash
+npm install
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Solid Pod login
+
+Note that the login button in this demo is hard-coded to use the Solid Identity broker at
+`https://broker.pod.inrupt.com`. To change this, look at `components/header/index.jsx`.
+
+## Updating your demo
+
 You can start editing the demo by modifying `pages/index.jsx`. The page auto-updates as you edit the file.
 
-You should also update values in config.js and package.json to match your demo.
+You should also update values in `config.js` and `package.json` to match your demo.
 
 ## Learn More
 
