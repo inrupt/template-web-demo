@@ -35,7 +35,7 @@ const CONFIG = config();
 export const TESTCAFE_ID_HEADER_LOGO = "header-banner-logo";
 
 export default function Header() {
-  const { session } = useSession();
+  const { session, sessionRequestInProgress } = useSession();
   const bem = useBem(useStyles());
   const classes = useStyles();
 
@@ -57,7 +57,7 @@ export default function Header() {
       <div className={bem("header-banner__main-nav")} />
 
       <div className={bem("user-menu")}>
-        {!session.sessionRequestInProgress && session.info.isLoggedIn && (
+        {!sessionRequestInProgress && session.info.isLoggedIn && (
           <LogoutButton
             onError={console.error}
             onLogout={() => window.location.reload()}
@@ -71,10 +71,11 @@ export default function Header() {
           </LogoutButton>
         )}
 
-        {!session.sessionRequestInProgress && !session.info.isLoggedIn && (
+        {!sessionRequestInProgress && !session.info.isLoggedIn && (
           <LoginButton
-            authOptions={{clientName: CONFIG.demoTitle}}
+            authOptions={{ clientName: CONFIG.demoTitle }}
             oidcIssuer="https://broker.pod.inrupt.com"
+            redirectUrl={window.location.href}
             onError={console.error}
           >
             <LinkButton
