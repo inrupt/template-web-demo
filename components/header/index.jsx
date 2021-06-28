@@ -20,12 +20,15 @@
  */
 
 import React from "react";
-import { createStyles, makeStyles } from "@material-ui/styles";
+import {
+  createStyles,
+  makeStyles,
+  LinkButton,
+} from "@inrupt/prism-react-components";
 import { useBem } from "@solid/lit-prism-patterns";
 import Link from "next/link";
 
 import { useSession, LoginButton, LogoutButton } from "@inrupt/solid-ui-react";
-import { LinkButton } from "@inrupt/prism-react-components";
 import styles from "./styles";
 import config from "../../config";
 
