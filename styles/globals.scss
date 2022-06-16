@@ -1,0 +1,11 @@
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+html {
+  @extend .h-100;
+}
+
+body, #__next {
+  @extend .d-flex;
+  @extend .flex-column;
+  @extend .h-100;
+}
