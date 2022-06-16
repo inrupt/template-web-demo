@@ -30,16 +30,21 @@ function TopNavigation() {
 
         <Nav className="me-auto" navbar>
           <NavItem>
-            <Link href="/page" passHref>
+            <Link href="/podInfo" passHref>
               <NavLink>
-                A Page
+                Pod Info
               </NavLink>
             </Link>
           </NavItem>
         </Nav>
 
         {!session.info.isLoggedIn && (
-          <LoginButton oidcIssuer="https://login.inrupt.com">
+          <LoginButton
+            oidcIssuer="https://login.inrupt.com"
+            authOptions={{
+              clientName: 'Inrupt Demo',
+            }}
+          >
             <Button color="primary">Log In</Button>
           </LoginButton>
         )}

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import dynamic from 'next/dynamic';
 
 import { SessionProvider } from '@inrupt/solid-ui-react';
 import { Container } from 'reactstrap';
@@ -8,13 +8,15 @@ import Footer from '../components/footer';
 
 import '../styles/globals.scss';
 
-function MyApp({ Component, pageProps }) {
-  useEffect(() => {
-    import("bootstrap/dist/js/bootstrap");
-  }, []);
+// Dynamically load bootstrap js clientside
+dynamic(
+  () => import('bootstrap/dist/js/bootstrap'),
+  { ssr: false },
+);
 
+function MyApp({ Component, pageProps }) {
   return (
-    <SessionProvider>
+    <SessionProvider sessionId="inrupt-demo" restorePreviousSession>
       <Navbar />
 
       <Container className="flex-shrink-0">

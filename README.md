@@ -14,7 +14,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[Backend API routes](https://nextjs.org/docs/api-routes/introduction) can be created in `pages/api/*`.
+[Backend API routes](https://nextjs.org/docs/api-routes/introduction) can be created in `pages/api/*`. An Client Identifier
+has been created there, which may be edited - this should be used during login if not running on localhost. Read more about
+Client Identifiers in the [Inrupt Documentation](https://docs.inrupt.com/developer-tools/javascript/client-libraries/tutorial/authenticate-client).
 
 ## Learn More
 
