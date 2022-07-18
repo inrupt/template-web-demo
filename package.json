@@ -19,7 +19,7 @@
     "sass": "^1.52.3"
   },
   "devDependencies": {
-    "eslint": "^8.17.0",
+    "eslint": "^8.20.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-next": "^12.1.6",
     "eslint-plugin-import": "^2.26.0",
